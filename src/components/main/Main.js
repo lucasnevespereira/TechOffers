@@ -3,8 +3,11 @@ import Chart from "../charts/Chart";
 import Searchbox from "../searchbox/Searchbox";
 import "../../utils/trads";
 import * as trads from "../../utils/trads";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Main = () => {
+  const [trad, setTrad] = useContext(AppContext);
   return (
     <main>
       <div className="main__container">
@@ -16,7 +19,7 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">Date</p>
+                <p className="text-primary-p">{trad.date}</p>
                 <span className="font-bold text-title">24/12</span>
               </div>
             </div>
@@ -28,7 +31,7 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{trads.job}</p>
+                <p className="text-primary-p">{trad.job}</p>
                 <span className="font-bold text-title">340</span>
               </div>
             </div>
@@ -41,7 +44,7 @@ const Main = () => {
 
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">Location</p>
+                <p className="text-primary-p">{trad.location}</p>
                 <span className="font-bold text-title">Paris</span>
               </div>
             </div>

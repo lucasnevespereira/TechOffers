@@ -1,17 +1,30 @@
 import "./Searchbox.css";
-import * as trads from "../../utils/trads";
+import { useContext, useState } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Searchbox = () => {
+  const [trad] = useContext(AppContext);
+  const [value, setValue] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(value);
+  };
+
+  const handleSearch = (e) => {
+    setValue(e.target.value);
+  };
+
   return (
     <div className="search-container">
-      <form onsubmit="event.preventDefault();" role="search">
-        <label for="search">Search your location</label>
+      <form onSubmit={handleSubmit} role="search">
+        <label htmlFor="search">Search your location</label>
         <input
           id="search"
           type="search"
-          placeholder={trads.searchBox}
-          autofocus
+          placeholder={String(trad.searchBox)}
+          autoFocus
           required
+          onChange={handleSearch}
         />
         <button type="submit">
           <i className="fa fa-search"></i>

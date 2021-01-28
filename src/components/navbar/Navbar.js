@@ -1,8 +1,9 @@
 import "./Navbar.css";
-import { useState } from "react";
-import * as trads from "../../utils/trads";
+import { useState, useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = ({ openSidebar }) => {
+  const [trad, setTrad] = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -15,7 +16,12 @@ const Navbar = ({ openSidebar }) => {
           className={activeIndex === 1 ? "active_link" : ""}
           onClick={() => {
             setActiveIndex(1);
-            trads.getContent("pt");
+            setTrad({
+              job: "Ofertas",
+              location: "Localisação",
+              date: "Data",
+              searchBox: "Entre a sua localisação..",
+            });
           }}
         >
           PT 🇵🇹
@@ -24,7 +30,12 @@ const Navbar = ({ openSidebar }) => {
           className={activeIndex === 2 ? "active_link" : ""}
           onClick={() => {
             setActiveIndex(2);
-            trads.getContent("uk");
+            setTrad({
+              job: "Jobs",
+              location: "Location",
+              date: "Date",
+              searchBox: "Enter your location..",
+            });
           }}
         >
           UK 🇬🇧
@@ -39,7 +50,12 @@ const Navbar = ({ openSidebar }) => {
           }
           onClick={() => {
             setActiveIndex(3);
-            trads.getContent("fr");
+            setTrad({
+              job: "Emplois",
+              location: "Ville",
+              date: "Date",
+              searchBox: "Entrez votre ville..",
+            });
           }}
         >
           FR 🇫🇷
