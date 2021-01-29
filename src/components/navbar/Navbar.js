@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 const Navbar = ({ openSidebar }) => {
-  const [trad, setTrad] = useContext(AppContext);
+  const [data, setData] = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -16,11 +16,12 @@ const Navbar = ({ openSidebar }) => {
           className={activeIndex === 1 ? "active_link" : ""}
           onClick={() => {
             setActiveIndex(1);
-            setTrad({
-              job: "Ofertas",
-              location: "Localisação",
-              date: "Data",
+            setData({
+              jobLabel: "Ofertas",
+              locationLabel: "Localisação",
+              dateLabel: "Data",
               searchBox: "Entre a sua localisação..",
+              country: "pt",
             });
           }}
         >
@@ -30,11 +31,12 @@ const Navbar = ({ openSidebar }) => {
           className={activeIndex === 2 ? "active_link" : ""}
           onClick={() => {
             setActiveIndex(2);
-            setTrad({
-              job: "Jobs",
-              location: "Location",
-              date: "Date",
+            setData({
+              jobLabel: "Jobs",
+              locationLabel: "Location",
+              dateLabel: "Date",
               searchBox: "Enter your location..",
+              country: "uk",
             });
           }}
         >
@@ -50,11 +52,12 @@ const Navbar = ({ openSidebar }) => {
           }
           onClick={() => {
             setActiveIndex(3);
-            setTrad({
-              job: "Emplois",
-              location: "Ville",
-              date: "Date",
+            setData({
+              jobLabel: "Emplois",
+              locationLabel: "Ville",
+              dateLabel: "Date",
               searchBox: "Entrez votre ville..",
+              country: "fr",
             });
           }}
         >

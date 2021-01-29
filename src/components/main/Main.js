@@ -1,13 +1,14 @@
 import "./Main.css";
 import Chart from "../charts/Chart";
 import Searchbox from "../searchbox/Searchbox";
-import "../../utils/trads";
-import * as trads from "../../utils/trads";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 const Main = () => {
-  const [trad, setTrad] = useContext(AppContext);
+  const [data, setData] = useContext(AppContext);
+  let today = new Date(),
+    currDate = today.getDate() + "/" + today.getMonth() + 1;
+
   return (
     <main>
       <div className="main__container">
@@ -19,8 +20,8 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{trad.date}</p>
-                <span className="font-bold text-title">24/12</span>
+                <p className="text-primary-p">{data.dateLabel}</p>
+                <span className="font-bold text-title">{currDate}</span>
               </div>
             </div>
           </div>
@@ -31,8 +32,10 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{trad.job}</p>
-                <span className="font-bold text-title">340</span>
+                <p className="text-primary-p">{data.jobLabel}</p>
+                <span className="font-bold text-title">
+                  {data.jobCount ? data.jobCount : 0}
+                </span>
               </div>
             </div>
           </div>
@@ -44,8 +47,10 @@ const Main = () => {
 
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{trad.location}</p>
-                <span className="font-bold text-title">Paris</span>
+                <p className="text-primary-p">{data.locationLabel}</p>
+                <span className="font-bold text-title">
+                  {data.location ? data.location : "-"}
+                </span>
               </div>
             </div>
           </div>

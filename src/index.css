@@ -28,6 +28,7 @@ body {
 
 .text-title {
   color: var(--darkblue);
+  text-transform: capitalize;
 }
 
 .text-lightblue {

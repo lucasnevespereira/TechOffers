@@ -1,13 +1,26 @@
 import "./Searchbox.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
+import axios from "axios";
+
+const techList = {};
 
 const Searchbox = () => {
-  const [trad] = useContext(AppContext);
+  const [data, setData] = useContext(AppContext);
   const [value, setValue] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(value);
+    let result = await axios.get(
+      `https://count-jobs.herokuapp.com/api?term=JavaScript&location=${value}&country=${data.country}`
+    );
+
+    console.log(result);
+
+    setData({
+      ...data,
+      jobCount: result.data.count,
+      location: value,
+    });
   };
 
   const handleSearch = (e) => {
@@ -21,7 +34,7 @@ const Searchbox = () => {
         <input
           id="search"
           type="search"
-          placeholder={String(trad.searchBox)}
+          placeholder={String(data.searchBox)}
           autoFocus
           required
           onChange={handleSearch}
