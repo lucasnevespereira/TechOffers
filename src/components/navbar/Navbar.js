@@ -3,7 +3,6 @@ import { useState, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { FR_CITIES, UK_CITIES, PT_CITIES } from "../../data/cityOptions";
 import logo from "../../assets/logo.svg";
-import { CountContext } from "../../context/CountContext";
 
 const Navbar = () => {
   const [data, setData] = useContext(AppContext);

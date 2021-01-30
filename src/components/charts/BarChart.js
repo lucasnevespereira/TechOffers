@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Bar } from "react-chartjs-2";
-import { AppContext } from "../../context/AppContext";
 import { CountContext } from "../../context/CountContext";
 import { techLabels } from "../../data/techs";
 
 const BarChart = () => {
-  const [count, setCount] = useContext(CountContext);
+  const [count] = useContext(CountContext);
 
   console.log("init", count);
 

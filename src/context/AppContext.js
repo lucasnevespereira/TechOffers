@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { FR_CITIES } from "../data/cityOptions";
-import { parisCount, totalParis } from "../data/techs";
+import { totalParis } from "../data/techs";
 
 export const AppContext = createContext();
 

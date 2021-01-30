@@ -6,8 +6,8 @@ import BarChart from "../charts/BarChart";
 import { CountContext } from "../../context/CountContext";
 
 const Main = () => {
-  const [data, setData] = useContext(AppContext);
-  const [count, setCount] = useContext(CountContext);
+  const [data] = useContext(AppContext);
+  const [count] = useContext(CountContext);
   let today = new Date(),
     currDate = today.getDate() + "/" + today.getMonth() + 1;
 
