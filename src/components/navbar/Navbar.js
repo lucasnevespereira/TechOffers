@@ -1,15 +1,16 @@
 import "./Navbar.css";
 import { useState, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import logo from "../../assets/logo.svg";
 
-const Navbar = ({ openSidebar }) => {
+const Navbar = () => {
   const [data, setData] = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <nav className="navbar">
-      <div className="nav_icon" onClick={() => openSidebar()}>
-        <i className="fa fa-bars" aria-hidden="true"></i>
+      <div className="nav_logo">
+        <img src={logo} alt="logo" />
       </div>
       <div className="navbar__links">
         <a
@@ -25,7 +26,7 @@ const Navbar = ({ openSidebar }) => {
             });
           }}
         >
-          PT 🇵🇹
+          <span>PT</span> 🇵🇹
         </a>
         <a
           className={activeIndex === 2 ? "active_link" : ""}
@@ -40,7 +41,7 @@ const Navbar = ({ openSidebar }) => {
             });
           }}
         >
-          UK 🇬🇧
+          <span>UK</span> 🇬🇧
         </a>
         <a
           className={
@@ -61,7 +62,7 @@ const Navbar = ({ openSidebar }) => {
             });
           }}
         >
-          FR 🇫🇷
+          <span>FR</span> 🇫🇷
         </a>
       </div>
     </nav>

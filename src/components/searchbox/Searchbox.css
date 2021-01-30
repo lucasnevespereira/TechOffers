@@ -7,19 +7,19 @@ form {
   width: 70%;
   margin: auto;
   background: var(--lightBlue);
-  border-radius: var(--rad);
+  border-radius: 10px;
 }
 input {
-  height: var(--height);
-  font-family: var(--font-fam);
+  height: 4rem;
+  font-family: "Lato", sans-serif;
   border: 0;
   color: var(--dark);
   font-size: 18px;
 }
 
 button {
-  height: var(--height);
-  font-family: var(--font-fam);
+  height: 4rem;
+  font-family: "Lato", sans-serif;
   border: 0;
   color: var(--dark);
   font-size: 18px;
@@ -29,9 +29,9 @@ input[type="search"] {
   width: 100%;
   background: #ffff;
   padding: 0 1.6rem;
-  border-radius: var(--rad);
+  border-radius: 10px;
   appearance: none;
-  transition: all var(--dur) var(--bez);
+  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
   transition-property: width, border-radius;
   z-index: 1;
   position: relative;
@@ -41,15 +41,15 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  width: var(--btn-width);
+  width: 6rem;
   font-weight: bold;
   background: var(--lightBlue);
-  border-radius: 0 var(--rad) var(--rad) 0;
+  border-radius: 0 10px 10px 0;
   color: var(--white);
 }
 input:not(:placeholder-shown) {
-  border-radius: var(--rad) 0 0 var(--rad);
-  width: calc(100% - var(--btn-width));
+  border-radius: 10px 0 0 10px;
+  width: calc(100% - 6rem);
 }
 input:not(:placeholder-shown) + button {
   display: block;
@@ -68,11 +68,13 @@ label {
 @media screen and (max-width: 768px) {
   input,
   button {
-    font-size: 22px;
+    font-size: 16px;
+    height: 3rem;
   }
 
   input[type="search"] {
     padding: 20px;
+    font-size: 16px;
   }
 
   form {

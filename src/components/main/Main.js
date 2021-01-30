@@ -3,6 +3,7 @@ import Chart from "../charts/Chart";
 import Searchbox from "../searchbox/Searchbox";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import BarChart from "../charts/BarChart";
 
 const Main = () => {
   const [data, setData] = useContext(AppContext);
@@ -56,7 +57,10 @@ const Main = () => {
           </div>
         </div>
         <div className="charts">
-          <Chart />
+          <div></div>
+          <BarChart className="barchart" />
+          <div></div>
+          {/* <Chart /> */}
           {/* <div className="charts__container">
             <div className="charts__container__title">
               <div>
