@@ -68,6 +68,7 @@ export const bordeauxCount = {
 
 export const lisboaCount = {
   JavaScript: 990,
+  PHP: 238,
   Python: 697,
   Java: 1040,
   Go: 494,
@@ -84,6 +85,7 @@ export const lisboaCount = {
 
 export const portoCount = {
   JavaScript: 478,
+  PHP: 238,
   Python: 269,
   Java: 412,
   Go: 170,
