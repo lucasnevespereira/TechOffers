@@ -13,8 +13,6 @@ export const techCount = {
   Kotlin: 12,
   Ruby: 13,
   Dart: 14,
-  Cplus: 15,
-  Csharp: 16,
 };
 
 export const techLabels = [
@@ -32,6 +30,4 @@ export const techLabels = [
   "Kotlin",
   "Ruby",
   "Dart",
-  "C++",
-  "C#",
 ];

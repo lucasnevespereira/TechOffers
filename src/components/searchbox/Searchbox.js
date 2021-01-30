@@ -1,24 +1,31 @@
 import "./Searchbox.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
+import { techLabels } from "../../data/techs";
 import axios from "axios";
-
-const techList = {};
 
 const Searchbox = () => {
   const [data, setData] = useContext(AppContext);
   const [value, setValue] = useState("");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let result = await axios.get(
-      `https://count-jobs.herokuapp.com/api?term=JavaScript&location=${value}&country=${data.country}`
-    );
 
-    console.log(result);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let totalOfJobs = 0;
+
+    techLabels.forEach(async (tech) => {
+      console.log(tech);
+      let result = await axios.get(
+        `http://localhost:5000/api?term=${tech}&location=${value}&country=${data.country}`
+      );
+      let counted = result.data.count;
+      let resultCount = String(counted).trim();
+      totalOfJobs = totalOfJobs + Number(resultCount);
+    });
 
     setData({
       ...data,
-      jobCount: result.data.count,
+      jobCount: totalOfJobs,
       location: value,
     });
   };

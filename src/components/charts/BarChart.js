@@ -31,8 +31,6 @@ const BarChart = () => {
           count.Kotlin,
           count.Ruby,
           count.Dart,
-          count.Cplus,
-          count.Csharp,
         ],
       },
     ],
