@@ -1,10 +1,14 @@
 import React, { createContext, useState } from "react";
-import { techCount } from "../data/techs";
+import { parisCount } from "../data/techs";
 
 export const CountContext = createContext();
 
 export const CountProvider = (props) => {
-  const [count, setCount] = useState(techCount);
+  const [count, setCount] = useState({
+    chartCount: parisCount,
+    totalCount: "-",
+    chartLabel: "Nombre d'emplois",
+  });
   return (
     <CountContext.Provider value={[count, setCount]}>
       {props.children}

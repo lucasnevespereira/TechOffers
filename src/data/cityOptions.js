@@ -1,6 +1,8 @@
 export const FR_CITIES = [
   { value: "paris", label: "Paris" },
-  { value: "nice", label: "Nice" },
+  { value: "marseille", label: "Marseille" },
+  { value: "bordeaux", label: "Bordeaux" },
+  { value: "lyon", label: "Lyon" },
 ];
 export const PT_CITIES = [
   { value: "lisboa", label: "Lisboa" },

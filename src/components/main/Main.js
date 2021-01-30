@@ -1,13 +1,13 @@
 import "./Main.css";
-import Searchbox from "../searchbox/Searchbox";
 import SelectBox from "../selectbox/SelectBox";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
-import { CountProvider } from "../../context/CountContext";
 import BarChart from "../charts/BarChart";
+import { CountContext } from "../../context/CountContext";
 
 const Main = () => {
   const [data, setData] = useContext(AppContext);
+  const [count, setCount] = useContext(CountContext);
   let today = new Date(),
     currDate = today.getDate() + "/" + today.getMonth() + 1;
 
@@ -23,7 +23,7 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{data.dateLabel}</p>
+                {/* <p className="text-primary-p">{data.dateLabel}</p> */}
                 <span className="font-bold text-title">{currDate}</span>
               </div>
             </div>
@@ -35,10 +35,8 @@ const Main = () => {
             </div>
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{data.jobLabel}</p>
-                <span className="font-bold text-title">
-                  {data.jobCount ? data.jobCount : 0}
-                </span>
+                {/* <p className="text-primary-p">{data.jobLabel}</p> */}
+                <span className="font-bold text-title">{count.totalCount}</span>
               </div>
             </div>
           </div>
@@ -50,7 +48,7 @@ const Main = () => {
 
             <div className="align">
               <div className="card_inner">
-                <p className="text-primary-p">{data.locationLabel}</p>
+                {/* <p className="text-primary-p">{data.locationLabel}</p> */}
                 <span className="font-bold text-title">
                   {data.location ? data.location : "-"}
                 </span>
@@ -59,11 +57,10 @@ const Main = () => {
           </div>
         </div>
         <div className="charts">
-          <CountProvider>
-            <div></div>
-            <BarChart />
-            <div></div>
-          </CountProvider>
+          <div></div>
+
+          <BarChart />
+          <div></div>
         </div>
       </div>
     </main>
