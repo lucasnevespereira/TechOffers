@@ -1,5 +1,6 @@
 import "./Main.css";
 import Searchbox from "../searchbox/Searchbox";
+import SelectBox from "../selectbox/SelectBox";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { CountProvider } from "../../context/CountContext";
@@ -13,7 +14,8 @@ const Main = () => {
   return (
     <main>
       <div className="main__container">
-        <Searchbox />
+        {/* <Searchbox /> */}
+        <SelectBox />
         <div className="main__cards">
           <div className="card">
             <div className="align">
@@ -62,15 +64,6 @@ const Main = () => {
             <BarChart />
             <div></div>
           </CountProvider>
-          {/* <Chart /> */}
-          {/* <div className="charts__container">
-            <div className="charts__container__title">
-              <div>
-                <h1>Jobs Counted</h1>
-                <p>Paris, France</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </main>

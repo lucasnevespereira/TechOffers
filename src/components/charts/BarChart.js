@@ -5,7 +5,6 @@ import { techLabels } from "../../data/techs";
 
 const BarChart = () => {
   const [count, setCount] = useContext(CountContext);
-  console.log(count);
   const data = {
     labels: techLabels,
     datasets: [

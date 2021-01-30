@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useState, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import { FR_CITIES, UK_CITIES, PT_CITIES } from "../../data/cityOptions";
 import logo from "../../assets/logo.svg";
 
 const Navbar = () => {
@@ -23,6 +24,7 @@ const Navbar = () => {
               dateLabel: "Data",
               searchBox: "Entre a sua localisação..",
               country: "pt",
+              selectOptions: PT_CITIES,
             });
           }}
         >
@@ -38,6 +40,7 @@ const Navbar = () => {
               dateLabel: "Date",
               searchBox: "Enter your location..",
               country: "uk",
+              selectOptions: UK_CITIES,
             });
           }}
         >
@@ -59,6 +62,7 @@ const Navbar = () => {
               dateLabel: "Date",
               searchBox: "Entrez votre ville..",
               country: "fr",
+              selectOptions: FR_CITIES,
             });
           }}
         >
