@@ -1,22 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Bar } from "react-chartjs-2";
-
-const data = {
-  labels: ["PHP", "JavaScript", "Python", "Golang", "React", "Swift", "Java"],
-  datasets: [
-    {
-      label: "Job Count",
-      backgroundColor: "rgba(0, 173, 181, .7)",
-      borderColor: "#222831",
-      borderWidth: 2,
-      hoverBackgroundColor: "#222831",
-      hoverBorderColor: "rgba(0, 173, 181, 1)",
-      data: [858, 1567, 769, 554, 976, 345, 898],
-    },
-  ],
-};
+import { CountContext } from "../../context/CountContext";
+import { techLabels } from "../../data/techs";
 
 const BarChart = () => {
+  const [count, setCount] = useContext(CountContext);
+  console.log(count);
+  const data = {
+    labels: techLabels,
+    datasets: [
+      {
+        label: "Job Count",
+        backgroundColor: "rgba(0, 173, 181, .7)",
+        borderColor: "#222831",
+        borderWidth: 2,
+        hoverBackgroundColor: "#222831",
+        hoverBorderColor: "rgba(0, 173, 181, 1)",
+        data: [
+          count.JavaScript,
+          count.Python,
+          count.PHP,
+          count.Java,
+          count.Go,
+          count.React,
+          count.Vue,
+          count.Angular,
+          count.Node,
+          count.TypeScript,
+          count.Swift,
+          count.Kotlin,
+          count.Ruby,
+          count.Dart,
+          count.Cplus,
+          count.Csharp,
+        ],
+      },
+    ],
+  };
   return (
     <div>
       <Bar

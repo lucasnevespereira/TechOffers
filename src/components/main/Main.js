@@ -1,8 +1,8 @@
 import "./Main.css";
-import Chart from "../charts/Chart";
 import Searchbox from "../searchbox/Searchbox";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import { CountProvider } from "../../context/CountContext";
 import BarChart from "../charts/BarChart";
 
 const Main = () => {
@@ -57,9 +57,11 @@ const Main = () => {
           </div>
         </div>
         <div className="charts">
-          <div></div>
-          <BarChart className="barchart" />
-          <div></div>
+          <CountProvider>
+            <div></div>
+            <BarChart />
+            <div></div>
+          </CountProvider>
           {/* <Chart /> */}
           {/* <div className="charts__container">
             <div className="charts__container__title">
