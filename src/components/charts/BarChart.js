@@ -12,7 +12,7 @@ const BarChart = () => {
     labels: techLabels,
     datasets: [
       {
-        label: count.chartLabel,
+        label: "Nb of Jobs",
         backgroundColor: "rgba(0, 173, 181, .7)",
         borderColor: "#222831",
         borderWidth: 2,
